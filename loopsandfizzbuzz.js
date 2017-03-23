@@ -22,6 +22,17 @@ console.assert(sumOfArray([10, 9, 8]) === 27)
 // Return null if an array of numbers is not passed.
 
 // TODO: Your function goes here.
+function maxOfArray (numArray) {
+  var max = 0
+  for (var i = 0; i < numArray.length; i++) {
+    if (typeof numArray[i] !== 'number') {
+      return null
+    } else if (max < numArray[i]) {
+      max = numArray[i]
+    }
+  }
+  return max
+}
 
 console.assert(maxOfArray([2, 4, 3]) === 4)
 console.assert(maxOfArray([10, 9, 8, 100, 7, 6]) === 100)

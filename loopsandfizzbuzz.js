@@ -46,7 +46,19 @@ console.assert(maxOfArray(87) === null)
 // and returns true if it is a vowel, false otherwise.
 
 // TODO: Your function goes here.
-
+function isVowel (char) {
+  var vowels = ['a', 'e', 'i', 'o', 'u']
+  if (typeof char !== 'string' || char.length !== 1) {
+    return false
+  }
+//  if (char.toLowerCase === 'y') {
+//    return undefined }
+  for (var i = 0; i < char.length; i++) {
+    if (char === vowels[i].toLowerCase) {
+      return true
+    }
+  }
+}
 console.assert(isVowel(0) === false)
 console.assert(isVowel('B') === false)
 console.assert(isVowel('b') === false)

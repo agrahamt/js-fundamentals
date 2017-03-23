@@ -71,7 +71,13 @@ console.assert(isVowel('E') === true)
 // For example, reverse('skoob') should return the string 'books'.
 
 // TODO: Your function goes here.
-
+function reverse (str) {
+  var revstr = ''
+  for (var i = str.length - 1; i >= 0; i--) {
+    revstr = revstr + str[i]
+  }
+  return revstr
+}
 console.assert(reverse('z') === 'z')
 console.assert(reverse('books') === 'skoob')
 console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew")

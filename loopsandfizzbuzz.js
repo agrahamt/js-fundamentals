@@ -124,6 +124,16 @@ console.assert(fizzbuzz(27) === '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz..fizz.
 // If there are multiple words with the same max length, the first word should be returned.
 
 // TODO: Your function goes here.
+function findLongestWord (str) {
+  var array = str.replace("'", '').split(' ')
+  var longWord = ''
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].length > longWord.length) {
+      longWord = array[i]
+    }
+  }
+  return longWord
+}
 
 console.assert(findLongestWord('a b c') === 'a')
 console.assert(findLongestWord('a book full of dogs') === 'book')
@@ -135,7 +145,14 @@ console.assert(findLongestWord("don't mess with Texas") === 'Texas')
 // If no GCD exists, return 1
 
 // TODO: Your function goes here.
-
+function gcd (num1, num2) {
+  var gcdNum = ''
+  for (var i = 1; i < num1; i++) {
+    if (num1 % i === 0 && num2 % i === 0) {
+      gcdNum = i
+    }
+  }
+  return gcdNum
 console.assert(gcd(5, 1) === 1)
 console.assert(gcd(15, 3) === 3)
 console.assert(gcd(15, 5) === 5)

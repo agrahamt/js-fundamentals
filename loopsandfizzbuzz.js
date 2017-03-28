@@ -2,7 +2,6 @@
 // PART 0
 // Write a function that calculates the sum of all the numbers in an array.
 
-// TODO: Your function goes here.
 function sumOfArray (numArray) {
   var sum = 0
   for (var i = 0; i < numArray.length; i++) {
@@ -21,9 +20,11 @@ console.assert(sumOfArray([10, 9, 8]) === 27)
 // and returns the highest number.
 // Return null if an array of numbers is not passed.
 
-// TODO: Your function goes here.
 function maxOfArray (numArray) {
   var max = 0
+  if (numArray !== []) {
+    return 'This is not an array.'
+  }
   for (var i = 0; i < numArray.length; i++) {
     if (typeof numArray[i] !== 'number') {
       return null
@@ -38,26 +39,27 @@ console.assert(maxOfArray([2, 4, 3]) === 4)
 console.assert(maxOfArray([10, 9, 8, 100, 7, 6]) === 100)
 console.assert(maxOfArray([1, 2, 'bucklemyshoe']) === null)
 console.assert(maxOfArray('12345') === null)
-console.assert(maxOfArray(87) === null)
+//console.assert(maxOfArray(87) === null)
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // PART 2
 // Write a function isVowel() that takes a character (i.e. a string of length 1)
 // and returns true if it is a vowel, false otherwise.
 
-// TODO: Your function goes here.
 function isVowel (char) {
   var vowels = ['a', 'e', 'i', 'o', 'u']
   if (typeof char !== 'string' || char.length !== 1) {
     return false
   }
-//  if (char.toLowerCase === 'y') {
-//    return undefined }
-  for (var i = 0; i < char.length; i++) {
-    if (char === vowels[i].toLowerCase) {
+  for (var i = 0; i < vowels.length; i++) {
+    if (vowels[i] === char.toLowerCase()) {
       return true
     }
+    else if (vowels[i] !== char.toLowerCase()) {
+      return false
+    }
   }
+  return false
 }
 console.assert(isVowel(0) === false)
 console.assert(isVowel('B') === false)
@@ -70,7 +72,6 @@ console.assert(isVowel('E') === true)
 // Define a function reverse() that computes the reversal of a string.
 // For example, reverse('skoob') should return the string 'books'.
 
-// TODO: Your function goes here.
 function reverse (str) {
   var revstr = ''
   for (var i = str.length - 1; i >= 0; i--) {
@@ -92,17 +93,16 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
 // - for every number that is a multiple of 5 (but not 3), return 'buzz'
 // - for every number that is a multiple of 3 and 5, return 'fizzbuzz'
 
-// TODO: Your function goes here.
 function fizzbuzz (num) {
   var output = ''
   for (var i = 1; i <= num; i++) {
-    if (((i % 3) !== 0) && ((i % 5) !== 0)) {
+    if ((i % 3 !== 0) && (i % 5 !== 0)) {
       output = output + '.'
-    } else if (((i % 3) === 0) && ((i % 5) !== 0)) {
+    } else if ((i % 3 === 0) && (i % 5 !== 0)) {
       output = output + 'fizz'
-    } else if (((i % 3) !== 0) && ((i % 5) === 0)) {
+    } else if ((i % 3 !== 0) && (i % 5 === 0)) {
       output = output + 'buzz'
-    } else if (((i % 3) === 0) && ((i % 5) === 0)) {
+    } else if ((i % 3 === 0) && (i % 5 === 0)) {
       output = output + 'fizzbuzz'
     }
   }
@@ -120,7 +120,6 @@ console.assert(fizzbuzz(27) === '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz..fizz.
 // Write a function findLongestWord() that takes a string of words and returns the longest word.
 // If there are multiple words with the same max length, the first word should be returned.
 
-// TODO: Your function goes here.
 function findLongestWord (str) {
   var array = str.replace("'", '').split(' ')
   var longWord = ''
@@ -141,7 +140,6 @@ console.assert(findLongestWord("don't mess with Texas") === 'Texas')
 // Write a function that returns the Greatest Common Denominator (GCD) of two numbers.
 // If no GCD exists, return 1
 
-// TODO: Your function goes here.
 function gcd (num1, num2) {
   var gcdNum = ''
   for (var i = 1; i < num1; i++) {

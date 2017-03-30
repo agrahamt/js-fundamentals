@@ -55,7 +55,15 @@ console.assert(capitalizeAll('every day is like sunday.') === 'Every Day Is Like
 
 var paragraph = 'it was a fine morning. the wine was good. light slanted in through the cafe window.'
 
-// TODO: put your function here
+function properSentences (str) {
+  var properSentence = ''
+  var sentenceArray = (str.split('. '))
+  for (var i = 0; i < sentenceArray.length - 1; i++) {
+    properSentence = properSentence + sentenceArray[i].charAt(0).toUpperCase() + sentenceArray[i].slice(1) + '. '
+  }
+  properSentence = properSentence + sentenceArray.slice(-1)[0].charAt(0).toUpperCase() + sentenceArray.slice(-1).toString().substr(1)
+  return properSentence
+}
 
 console.assert(properSentences(paragraph) === 'It was a fine morning. The wine was good. Light slanted in through the cafe window.')
 

@@ -71,7 +71,11 @@ console.assert(properSentences(paragraph) === 'It was a fine morning. The wine w
 // PART 4
 // Write a function called iPutTheFunIn(). It should take a string as input.
 // The output should be a copy of the original string with the word 'fun' inserted into the center of the string.
-
+function iPutTheFunIn (str) {
+  var firstHalfofString = str.slice(0, str.length / 2)
+  var secondHalfofString = str.slice(str.length / 2, str.length)
+  return firstHalfofString + 'fun' + secondHalfofString
+}
 console.assert(iPutTheFunIn('funerary') === 'funefunrary')
 console.assert(iPutTheFunIn('reds') === 'refunds')
 
@@ -82,7 +86,10 @@ console.assert(iPutTheFunIn('reds') === 'refunds')
 // starting value, one after the other, and return a new value that has been processed
 // by both function (2) and function (3).
 
-// TODO: put your function here
+function pipeline (num, function1, function2) {
+  var newVal = function2(function1(num))
+  return newVal
+}
 
 // THE FOLLOWING THREE TESTS ALL CORRESPOND TO THE `pipeline()` FUNCTION
 
